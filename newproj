@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+function newcpp() {
+    PROJNAME=$1
+    if [ -z "$PROJNAME" ]
+    then
+          echo "PROJNAME is empty"
+          return
+    fi
+
+    PROJROOT=$HOME/proj/$PROJNAME
+    if [ -d "$PROJROOT" ]
+    then
+          echo "project $PROJNAME exists"
+          return
+    fi
+
+    mkdir -p $PROJROOT
+
+cat <<EOT >> $PROJROOT/makefile
+all: $PROJNAME
+
+$PROJNAME: main.cpp
+	cc \$? -o \$@ -lstdc++
+EOT
+
+cat <<EOT >> $PROJROOT/main.cpp
+#include <iostream>
+
+int main(int argc, char **argv) {
+    std::cout << "hello" << std::endl;
+
+    return 0;
+}
+EOT
+    cd $PROJROOT
+    vim main.cpp
+}
+
