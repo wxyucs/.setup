@@ -21,7 +21,7 @@ cat <<EOT >> $PROJROOT/makefile
 all: $PROJNAME
 
 $PROJNAME: main.cpp
-	cc \$? -o \$@ -lstdc++
+	cc \$^ -o \$@ -lstdc++
 EOT
 
 cat <<EOT >> $PROJROOT/main.cpp
