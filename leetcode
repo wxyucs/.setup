@@ -24,9 +24,9 @@ function leetcode() {
     mkdir -p $PROBLEMROOT
 
 cat <<EOT >> $PROBLEMROOT/makefile
-all: $NAME
+all: $NAME.run
 
-$NAME: main.cpp
+$NAME.run: main.cpp
 	cc \$^ -o \$@ -std=c++11 -fsanitize=address -lstdc++ 
 EOT
 
