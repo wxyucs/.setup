@@ -40,6 +40,7 @@ cat <<EOT >> $PROBLEMROOT/main.cpp
 #include <deque>
 #include <map>
 #include <queue>
+#include <random>
 #include <stack>
 #include <string>
 #include <sstream>
