@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install -y openssh-server vim g++ gcc make htop zsh screen protobuf-compiler
+sudo apt install -y openssh-server vim g++ gcc make htop zsh screen protobuf-compiler git
 
 # Install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
