@@ -31,6 +31,7 @@ $NAME.run: main.cpp
 EOT
 
 cat <<EOT >> $PROBLEMROOT/main.cpp
+#include <cassert>
 #include <iostream>
 
 #include <algorithm>
