@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+function gitclone() {
+    URI=$1
+    if [ -z "$URI" ]
+    then
+          echo "usage: gitclone git@github.com:<orgname>/<projname>.git"
+          return
+    fi
+    cd ~/git
+    git clone $URI
+}
+
