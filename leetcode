@@ -71,6 +71,6 @@ int main(int argc, char **argv) {
 }
 EOT
     cd $PROBLEMROOT
-    vim main.cpp
+    emacs -nw main.cpp
 }
 
