@@ -16,7 +16,9 @@ function leetcode() {
           return
     fi
 
-    PROBLEMROOT=$HOME/leetcode/$NUM-$NAME
+    NAME=`echo $NAME | tr ' ' '-' | tr '[:upper:]' '[:lower:]'`
+
+    PROBLEMROOT=$HOME/leetcode/${NUM}_${NAME}
     if [ -d "$PROBLEMROOT" ]
     then
           echo "path $PROBLEMROOT exists"
@@ -27,7 +29,9 @@ function leetcode() {
 
     cp $_LEETCODE_DIR/main.cpp $PROBLEMROOT/main.cpp
     cp $_LEETCODE_DIR/makefile $PROBLEMROOT/makefile
+    cp $_LEETCODE_DIR/README $PROBLEMROOT/README
     sed -i "s/!NAME!/$NAME/" $PROBLEMROOT/makefile
+    sed -i "s/!NAME!/$NAME/" $PROBLEMROOT/README
 
     cd $PROBLEMROOT
     emacs -nw main.cpp
