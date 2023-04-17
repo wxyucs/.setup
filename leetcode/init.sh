@@ -29,9 +29,9 @@ function leetcode() {
 
     cp $_LEETCODE_DIR/main.cpp $PROBLEMROOT/main.cpp
     cp $_LEETCODE_DIR/makefile $PROBLEMROOT/makefile
-    cp $_LEETCODE_DIR/README $PROBLEMROOT/README
+    cp $_LEETCODE_DIR/README.md $PROBLEMROOT/README.md
     sed -i "s/!NAME!/$NAME/" $PROBLEMROOT/makefile
-    sed -i "s/!NAME!/$NAME/" $PROBLEMROOT/README
+    sed -i "s/!NAME!/$NAME/" $PROBLEMROOT/README.md
 
     cd $PROBLEMROOT
     emacs -nw main.cpp
